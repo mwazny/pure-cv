@@ -1,0 +1,136 @@
+%!TEX program = pdflatex
+% =============================================================
+% Minimalist, ATS-friendly CV template — pure structure, no fluff.
+% One-column layout, without icons, without tables, without graphics.
+% =============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[dvipsnames]{xcolor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+\newcommand{\rSection}[1]{\section{#1}}
+\newcommand{\rSubSection}[4]{
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{\small #2} \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\rItemizeBegin}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\rItemizeEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\rItem}[1]{\item\small #1}
+\newcommand{\rSubItem}[1]{\rItem{#1}\vspace{-2pt}}
+
+\newcommand{\rSubSectionListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\rSubSectionListEnd}{\end{itemize}}
+
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape John Doe} \\ \vspace{4pt}
+  \small
+  phone: 111~222~333 ~$\vert$~
+  email: \href{mailto:john.doe@example.com}{john.doe@example.com} \\
+  \href{https://www.linkedin.com/in/your-username}{linkedin.com/in/your-username} ~$\vert$~
+  \href{https://github.com/your-username}{github.com/your-username}
+\end{center}
+
+\rSection{Professional Summary}
+\small{
+  Full-Stack Developer with over a~dozen years of experience in building backend and frontend
+  applications. Experienced in designing large-scale data processing systems and automating
+  processes.
+}
+
+\rSection{Technical Skills}
+\rSubSectionListStart
+  \rItem{\textbf{Python:} Django, Django REST Framework, Pytest}
+  \rItem{\textbf{JavaScript:} React.js, Angular, Vue.js}
+  \rItem{\textbf{Databases:} PostgreSQL, Redis, Elasticsearch}
+  \rItem{\textbf{Tools / other:} Git, Docker, \LaTeX}
+\rSubSectionListEnd
+
+\rSection{Professional Experience}
+\rSubSectionListStart
+
+  \rSubSection
+    {Company}{2024 -- present}
+    {Python Developer, remote}{Warsaw, Poland}
+  \rItemizeBegin
+    \rItem{Description \dots}
+    \rItem{Description \dots}
+  \rItemizeEnd
+
+  \rSubSection
+    {Company}{2023 -- 2024}
+    {JavaScript Developer, remote}{Warsaw, Poland}
+  \rItemizeBegin
+    \rItem{Description \dots}
+  \rItemizeEnd
+
+\rSubSectionListEnd
+
+\section{Additional Experience}
+\rSubSectionListStart
+  \rSubSection
+    {Company}{2018 -- 2022}
+    {part-time, weekends}{Warsaw, Poland}
+  \rItemizeBegin
+    \rItem{Description \dots}
+  \rItemizeEnd
+\rSubSectionListEnd
+
+\section{Education}
+\rSubSectionListStart
+  \rSubSection
+    {University}{2009 -- 2011}
+    {Master's Degree, Computer Science}{Warsaw, Poland}
+  \rItemizeBegin
+    \rItem{Graduated with honors, final grade: very good.}
+    \rItem{Master's thesis: \textit{"\dots"}.}
+  \rItemizeEnd
+
+  \rSubSection
+    {University}{2006 -- 2009}
+    {Bachelor's Degree, Computer Science}{Warsaw, Poland}
+  \rItemizeBegin
+    \rItem{Final grade: very good.}
+    \rItem{Bachelor's thesis: \textit{"\dots"}.}
+  \rItemizeEnd
+\rSubSectionListEnd
+
+\section{Awards and Honors}
+\rSubSectionListStart
+  \rItem{Certificate of recognition for outstanding academic performance, 2010--2011.}
+\rSubSectionListEnd
+
+\section{Additional Information}
+\rSubSectionListStart
+  \rItem{English}
+\rSubSectionListEnd
+
+\end{document}
